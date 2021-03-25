@@ -18,6 +18,9 @@ module.exports.allConcept = (inScheme, languages) => `
           prefLabel {
             ${[...languages].join(' ')}
           }
+          altLabel {
+            ${[...languages].join(' ')}
+          }
           definition {
             ${[...languages].join(' ')}
           }
@@ -28,6 +31,9 @@ module.exports.allConcept = (inScheme, languages) => `
             ${[...languages].join(' ')}
           }
           notation
+          example {
+            ${[...languages].join(' ')}
+          }
           narrower {
             id
             prefLabel {
@@ -51,6 +57,27 @@ module.exports.allConcept = (inScheme, languages) => `
             prefLabel {
               ${[...languages].join(' ')}
             }
+          }
+          related {
+            id
+            prefLabel {
+              ${[...languages].join(' ')}
+            }
+          }
+          relatedMatch {
+            id
+          }
+          broadMatch {
+            id
+          }
+          narrowMatch {
+            id
+          }
+          closeMatch {
+            id
+          }
+          exactMatch {
+            id
           }
           inScheme {
             id
@@ -103,6 +130,9 @@ module.exports.allConceptScheme = languages => `
     id
     notation
     prefLabel {
+      ${[...languages].join(' ')}
+    }
+    altLabel {
       ${[...languages].join(' ')}
     }
   }

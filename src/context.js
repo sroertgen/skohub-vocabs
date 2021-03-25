@@ -1,5 +1,6 @@
 const jsonld = {
   "@context": {
+    "@version": 1.1,
     "id": "@id",
     "type": "@type",
     "@vocab": "http://www.w3.org/2004/02/skos/core#",
@@ -7,6 +8,8 @@ const jsonld = {
     "dct": "http://purl.org/dc/terms/",
     "schema": "http://schema.org/",
     "vann": "http://purl.org/vocab/vann/",
+    "as": "https://www.w3.org/ns/activitystreams#",
+    "ldp": "http://www.w3.org/ns/ldp#",
     "title": {
       "@id": "dct:title",
       "@container": "@language"
@@ -36,6 +39,9 @@ const jsonld = {
     "prefLabel": {
       "@container": "@language"
     },
+    "altLabel": {
+      "@container": ["@language", "@set"],
+    },
     "definition": {
       "@container": "@language"
     },
@@ -48,13 +54,39 @@ const jsonld = {
     "notation": {
       "@container": "@set"
     },
+    "example": {
+      "@container": "@language"
+    },
     "narrower": {
+      "@container": "@set"
+    },
+    "related": {
+      "@container": "@set"
+    },
+    "relatedMatch": {
       "@container": "@set"
     },
     "narrowerTransitive": {
       "@container": "@set"
     },
     "broaderTransitive": {
+      "@container": "@set"
+    },
+    "broadMatch": {
+      "@container": "@set"
+    },
+    "narrowMatch": {
+      "@container": "@set"
+    },
+    "closeMatch": {
+      "@container": "@set"
+    },
+    "exactMatch": {
+      "@container": "@set"
+    },
+    "followers": "as:followers",
+    "inbox": "ldp:inbox",
+    "hasTopConcept": {
       "@container": "@set"
     }
   }
