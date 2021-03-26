@@ -3,6 +3,8 @@ module.exports = languages => `
     type: String,
     title: LanguageMap,
     description: LanguageMap,
+    about: LanguageMap,
+    educationalContext: LanguageMap,
     hasTopConcept: [Concept] @link(from: "hasTopConcept___NODE")
   }
 
@@ -27,6 +29,9 @@ module.exports = languages => `
     closeMatch: [Concept],
     exactMatch: [Concept],
     inScheme: ConceptScheme! @link(from: "inScheme___NODE"),
+    educationalLevel: [Concept],
+    about: LanguageMap,
+    educationalContext: LanguageMap,
     hub: String,
     inbox: String
   }

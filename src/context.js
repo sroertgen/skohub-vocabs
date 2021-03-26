@@ -7,6 +7,7 @@ const jsonld = {
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dct": "http://purl.org/dc/terms/",
     "schema": "http://schema.org/",
+    "oeh": "http://w3id.org/openeduhub/terms/",
     "vann": "http://purl.org/vocab/vann/",
     "as": "https://www.w3.org/ns/activitystreams#",
     "ldp": "http://www.w3.org/ns/ldp#",
@@ -83,6 +84,18 @@ const jsonld = {
     },
     "exactMatch": {
       "@container": "@set"
+    },
+    "educationalLevel": {
+      "@id": "schema:educationalLevel",
+      "@container": "@set"
+    },
+    "about": {
+      "@id": "schema:about",
+      "@container": "@language"
+    },
+    "educationalContext": {
+      "@id": "oeh:educationalContext",
+      "@container": "@language"
     },
     "followers": "as:followers",
     "inbox": "ldp:inbox",

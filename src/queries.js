@@ -16,52 +16,52 @@ module.exports.allConcept = (inScheme, languages) => `
           followers
           inbox
           prefLabel {
-            ${[...languages].join(' ')}
+            ${[...languages].join(" ")}
           }
           altLabel {
-            ${[...languages].join(' ')}
+            ${[...languages].join(" ")}
           }
           definition {
-            ${[...languages].join(' ')}
+            ${[...languages].join(" ")}
           }
           scopeNote {
-            ${[...languages].join(' ')}
+            ${[...languages].join(" ")}
           }
           note {
-            ${[...languages].join(' ')}
+            ${[...languages].join(" ")}
           }
           notation
           example {
-            ${[...languages].join(' ')}
+            ${[...languages].join(" ")}
           }
           narrower {
             id
             prefLabel {
-              ${[...languages].join(' ')}
+              ${[...languages].join(" ")}
             }
           }
           narrowerTransitive {
             id
             prefLabel {
-              ${[...languages].join(' ')}
+              ${[...languages].join(" ")}
             }
           }
           broader {
             id
             prefLabel {
-              ${[...languages].join(' ')}
+              ${[...languages].join(" ")}
             }
           }
           broaderTransitive {
             id
             prefLabel {
-              ${[...languages].join(' ')}
+              ${[...languages].join(" ")}
             }
           }
           related {
             id
             prefLabel {
-              ${[...languages].join(' ')}
+              ${[...languages].join(" ")}
             }
           }
           relatedMatch {
@@ -79,10 +79,19 @@ module.exports.allConcept = (inScheme, languages) => `
           exactMatch {
             id
           }
+          about {
+            ${[...languages].join(" ")}
+          }
+          educationalContext {
+            ${[...languages].join(" ")}
+          }
+          educationalLevel {
+            id
+          }
           inScheme {
             id
             title {
-              ${[...languages].join(' ')}
+              ${[...languages].join(" ")}
             }
           }
           topConceptOf {
@@ -94,7 +103,7 @@ module.exports.allConcept = (inScheme, languages) => `
   }
 `
 
-module.exports.allConceptScheme = languages => `
+module.exports.allConceptScheme = (languages) => `
   {
     allConceptScheme {
       edges {
@@ -102,10 +111,16 @@ module.exports.allConceptScheme = languages => `
           id
           type
           title {
-            ${[...languages].join(' ')}
+            ${[...languages].join(" ")}
           }
           description {
-            ${[...languages].join(' ')}
+            ${[...languages].join(" ")}
+          }
+          about {
+            ${[...languages].join(" ")}
+          }
+          educationalContext {
+            ${[...languages].join(" ")}
           }
           hasTopConcept {
             ...ConceptFields
@@ -130,10 +145,10 @@ module.exports.allConceptScheme = languages => `
     id
     notation
     prefLabel {
-      ${[...languages].join(' ')}
+      ${[...languages].join(" ")}
     }
     altLabel {
-      ${[...languages].join(' ')}
+      ${[...languages].join(" ")}
     }
   }
 `

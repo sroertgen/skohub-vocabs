@@ -9,58 +9,38 @@ import { i18n, getDomId, getFilePath } from '../common'
 const Concept = ({ pageContext: { node: concept, language, baseURL } }) => (
   <div className="content block" id={getDomId(concept.id)}>
     <h1>
-      {concept.notation &&
-        <span>{concept.notation.join(',')}&nbsp;</span>
-      }
+      {concept.notation && <span>{concept.notation.join(",")}&nbsp;</span>}
       {i18n(language)(concept.prefLabel)}
     </h1>
     <h2>{concept.id}</h2>
-    <JsonLink
-      to={baseURL + getFilePath(concept.id, "json")}
-    />
+    <JsonLink to={baseURL + getFilePath(concept.id, "json")} />
     <p>
       <a href={concept.inbox}>Inbox</a>
     </p>
-    {concept.definition
-      && (
-        <div className="markdown">
-          <h3>Definition</h3>
-          <Markdown>
-            {i18n(language)(concept.definition)}
-          </Markdown>
-        </div>
-      )
-    }
-    {concept.scopeNote
-      && (
-        <div className="markdown">
-          <h3>Scope Note</h3>
-          <Markdown>
-            {i18n(language)(concept.scopeNote)}
-          </Markdown>
-        </div>
-      )
-    }
-    {concept.note
-      && (
-        <div className="markdown">
-          <h3>Note</h3>
-          <Markdown>
-            {i18n(language)(concept.note)}
-          </Markdown>
-        </div>
-      )
-    }
-    {concept.example 
-      && (
-        <div className="markdown">
-          <h3>Example</h3>
-          <Markdown>
-            {i18n(language)(concept.example)}
-          </Markdown>
-        </div>
-      )
-    }
+    {concept.definition && (
+      <div className="markdown">
+        <h3>Definition</h3>
+        <Markdown>{i18n(language)(concept.definition)}</Markdown>
+      </div>
+    )}
+    {concept.scopeNote && (
+      <div className="markdown">
+        <h3>Scope Note</h3>
+        <Markdown>{i18n(language)(concept.scopeNote)}</Markdown>
+      </div>
+    )}
+    {concept.note && (
+      <div className="markdown">
+        <h3>Note</h3>
+        <Markdown>{i18n(language)(concept.note)}</Markdown>
+      </div>
+    )}
+    {concept.example && (
+      <div className="markdown">
+        <h3>Example</h3>
+        <Markdown>{i18n(language)(concept.example)}</Markdown>
+      </div>
+    )}
     {concept.related && concept.related.length > 0 && (
       <div>
         <h3>Related</h3>
@@ -135,6 +115,30 @@ const Concept = ({ pageContext: { node: concept, language, baseURL } }) => (
         </ul>
       </div>
     )}
+    {concept.about && (
+      <div>
+        <h3>Schulfach</h3>
+        <Markdown>{i18n(language)(concept.about)}</Markdown>
+      </div>
+    )}
+    {concept.educationalContext && (
+      <div>
+        <h3>Schulform</h3>
+        <Markdown>{i18n(language)(concept.educationalContext)}</Markdown>
+      </div>
+    )}
+    {/* {concept.educationalLevel && concept.educationalLevel.length > 0 && (
+      <div>
+        <h3>Klassenstufe</h3>
+        <ul>
+          {concept.educationalLevel.map((educationalLevel) => (
+            <li key={educationalLevel.id}>
+              <a href={educationalLevel.id}>{educationalLevel.id}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )} */}
   </div>
 )
 

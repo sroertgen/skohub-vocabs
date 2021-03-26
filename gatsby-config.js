@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `SkoHub-Vocabs`,
+    title: `SkoHub-Vocabs Curriculum Edition`,
     description: `Static site generator for Simple Knowledge Management Systems (SKOS)`,
     author: `@gatsbyjs`,
   },
